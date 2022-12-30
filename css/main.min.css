@@ -1,0 +1,1 @@
+*{margin:0;box-sizing:border-box}body{min-height:100vh}.container{width:100%;max-width:900px;margin:0 auto}.color-box{display:grid;grid-template-columns:repeat(6, 1fr)}.colors{background:red;padding:1em;border:1px solid #000}form{display:grid;grid-template-columns:repeat(3, 1fr)}/*# sourceMappingURL=main.min.css.map */
