@@ -1,46 +1,47 @@
 const colorInput = document.getElementById('userInput')
 const type = document.getElementById('schemeType')
-const colorBox = document.querySelectorAll('.colors')
-console.log(colorBox);
+const colorBox = document.querySelector('.color-box')
+let colorArr = []
 
-
-let colorArray = []
-document.getElementById('colorForm').addEventListener('submit', (e) =>{
-
-    e.preventDefault()
-    fetch(`https://www.thecolorapi.com/scheme?hex=${colorInput.value.replace('#','')}&format=json&mode=${type.value}&count=6`)
+// using this as a placeholder when the page loads
+fetch('https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6')
     .then(res => res.json())
     .then(data => {
-        
-
-        const colorData = data.colors.map((x)=> {
-           return x.hex.value
-        })
-
-            for (color of colorData){
-             colorBox.forEach((x)=>{
-            x.style.backgroundColor = color
-        })
-            }
+        colorArr = data.colors.map((color)=> {
+            return color.hex.value
+         })
+         renderColors()
     })
 
+// added event listeners
+document.body.addEventListener('click', (e)=>{
+    e.preventDefault()
+    if (e.target.id === 'getBtn'){
+        fetch(`https://www.thecolorapi.com/scheme?hex=${colorInput.value.replace('#','')}&format=json&mode=${type.value}&count=6`)
+        .then(res => res.json())
+        .then(data => {
+            // pushed all color scheme to my array to render later
+             colorArr = data.colors.map((color)=> {
+               return color.hex.value
+            })
+            renderColors()
+        })
+    }
+    // copy to clipboard
+const colorValue = document.getElementById('color-value')
+    if (e.target.id === 'color-value'){
+        console.log('click');
+        navigator.clipboard.writeText(colorValue.textContent);
+    }
 })
 
 function renderColors() {
+
+    let html = ''
+
+    colorArr.map((color)=>{
+        html += `<div style="background-color:${color};" class="colors"><p id="color-value">${color}</p></div>`
+    })
+    
+   colorBox.innerHTML = html
 }
-
-
-// fetch("https://www.thecolorapi.com/scheme", {
-//     method: "GET",
-//     body:{
-//         count: '6',
-//         seed: {'hex':{'value': '000000'}},
-//         mode: 'monochrome'
-//     },
-//     headers: { "Content-Type": "application/json" }
-// } )
-//     .then(res => res.json())
-//     .then(data => {
-//         // console.log(data.colors.map((x)=> x.hex.value));
-//         console.log(data);
-//     })
