@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Siaw A. Nicholas">
-    <meta name="description" content="Free color scheme generator">
-    <meta name="keywords" content="color, scheme, color scheme,color generator">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Siaw A. Nicholas" />
+    <meta name="description" content="Free color scheme generator" />
+    <meta
+      name="keywords"
+      content="color, scheme, color scheme,color generator"
+    />
     <title>Color-Gen</title>
-    <link rel="stylesheet" href="/dist/css/main.css">
-</head>
-<body>
-        <nav>
-            <h3>Color Scheme Generator</h3>
-        </nav>
+    <link rel="stylesheet" href="/dist/css/main.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <h3>Color Scheme Generator</h3>
+    </nav>
     <div class="container">
-            <form action="" id="colorForm">
-                <input id="userInput" type="color">
-                <select name="schemeType" id="schemeType">
-                    <option value="monochrome">Monochrome</option>
-                    <option value="monochrome-dark">Monochrome Dark</option>
-                    <option value="monochrome-light ">Monochrome Light</option>
-                    <option value="analogic">Analogic</option>
-                    <option value="complement">Complement</option>
-                    <option value="analogic-complement">Analogic Complement</option>
-                </select>
-                <button id="getBtn" class="getBtn">Get color scheme</button>
-            </form>
-        <div class="color-box">
-            <!-- Color picker here -->
-        </div>
+      <form action="" id="colorForm">
+        <input id="userInput" type="color" />
+        <select name="schemeType" id="schemeType">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome Dark</option>
+          <option value="monochrome-light">Monochrome Light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic Complement</option>
+        </select>
+        <button id="getBtn" class="getBtn">Get color scheme</button>
+      </form>
+      <div class="color-box">
+        <!-- Color picker here -->
+      </div>
     </div>
-    <script src="/src/js/script.js"></script>
-</body>
+    <script src="/src/js/script.js" type="module"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
 </html>
