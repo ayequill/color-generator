@@ -4,7 +4,7 @@ export const copyAlert = {
   destination: "#",
   newWindow: true,
   close: true,
-  gravity: "top", 
+  gravity: "center", 
   position: "left", 
   stopOnFocus: true, 
   style: {
