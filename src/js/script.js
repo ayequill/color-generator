@@ -18,8 +18,11 @@ fetch(
 
 // added event listeners
 document.body.addEventListener("click", (e) => {
-  e.preventDefault();
+
+
   if (e.target.id === "getBtn") {
+    
+   e.preventDefault();
     fetch(
       `https://www.thecolorapi.com/scheme?hex=${colorInput.value.replace(
         "#",
